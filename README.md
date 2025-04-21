@@ -1,6 +1,6 @@
 ---
 
-```markdown
+
 # 👁️ Eye Gender Detection via Deep Learning
 
 A powerful offline application for **gender classification** based solely on **eye patterns** from images and videos. Leveraging the capabilities of deep learning, PyTorch, and Streamlit, this system can predict whether an eye belongs to a male or female.
