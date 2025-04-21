@@ -1,103 +1,147 @@
+---
+
+```markdown
 # 👁️ Eye Gender Detection via Deep Learning
 
-A powerful offline application for **gender classification** based solely on **eye patterns** from images and videos. Leveraging deep learning, PyTorch, and Streamlit, this system predicts whether an eye belongs to a male or female with high accuracy.
+A powerful offline application for **gender classification** based solely on **eye patterns** from images and videos. Leveraging the capabilities of deep learning, PyTorch, and Streamlit, this system can predict whether an eye belongs to a male or female.
 
 ---
 
 ## 🚀 Features
 
-- 🎯 **High-accuracy classification** from eye images
-- 🧠 **Pretrained ResNet-18** model fine-tuned for ocular-based recognition
-- 🎥 Real-time **video stream analysis** with Haar cascade eye detection
-- 🖼️ **Image and video** upload support
-- 🌑 **Dark-themed, professional UI** built in Streamlit
-- 🔒 100% **offline and privacy-friendly**
+- 🎯 **High-accuracy gender classification** from eye images  
+- 🧠 **Pretrained ResNet-18 model** fine-tuned for eye-based gender recognition  
+- 🎥 **Video stream analysis** with real-time Haar cascade eye detection  
+- 🖼️ Supports **image and video uploads**  
+- 🧩 **Dark-themed professional UI** built with Streamlit  
+- ⚙️ Completely **offline** and privacy-focused  
 
 ---
 
 ## 🗂️ Project Structure
-eye-gender-detector/ │ ├── best_model.pth # Trained PyTorch model ├── eye_gender_streamlit_pro.py # Streamlit app ├── processed_eye_dataset/ # Structured dataset │ ├── train/ │ │ ├── female/ │ │ └── male/ │ ├── val/ │ │ ├── female/ │ │ └── male/ │ └── test/ │ ├── female/ │ └── male/ └── README.md
 
+```
+eye-gender-detector/
+│
+├── best_model.pth                  # Trained PyTorch model
+├── eye_gender_streamlit_pro.py     # Streamlit app
+├── processed_eye_dataset/          # Structured dataset
+│   ├── train/
+│   │   ├── female/
+│   │   └── male/
+│   ├── val/
+│   │   ├── female/
+│   │   └── male/
+│   └── test/
+│       ├── female/
+│       └── male/
+└── README.md
+```
 
 ---
 
 ## 🧪 Dataset Details
 
-The dataset includes over **11,500+ eye images**:
-- 👁️ Female eyes: ~5,200
-- 👁️ Male eyes: ~6,300
-
-Each image is:
-- Cropped using `haarcascade_eye.xml`
-- Renamed as:
-  - `F_XXXXX.jpg` → Female
-  - `M_XXXXX.jpg` → Male
+The dataset consists of over **11,500+ eye images**:
+- Female eyes: `~5200`
+- Male eyes: `~6300`
+- All images are preprocessed using Haar cascades and named as:
+  - `F_XXXXX.jpg` for females
+  - `M_XXXXX.jpg` for males
 
 ---
 
 ## 🛠️ Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/eye-gender-detector.git
-   cd eye-gender-detector
-Create and activate virtual environment
+### 1. Clone the repo:
+```bash
+git clone https://github.com/yourusername/eye-gender-detector.git
+cd eye-gender-detector
+```
 
-# Windows
+### 2. Create and activate a virtual environment:
+```bash
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\activate       # On Windows
+# or
+source venv/bin/activate    # On macOS/Linux
+```
 
-# Linux/macOS
-python3 -m venv venv
-source venv/bin/activate
-Install dependencies
-
+### 3. Install dependencies:
+```bash
 pip install -r requirements.txt
-Run the Streamlit app
+```
 
+### 4. Run the Streamlit app:
+```bash
 streamlit run eye_gender_streamlit_pro.py
-🖥️ Usage
-Open the app
-Select Image or Video mode
-Upload an eye image or video clip
-View gender prediction instantly on screen
-🧠 Model Architecture
-Base model: ResNet-18
-Fine-tuned layer: Custom FC layer for binary output
-Input shape: 128×128 RGB images
-Loss: CrossEntropyLoss
-Optimizer: Adam
-Data Augmentation:
-Random rotations
-Horizontal flips
-Brightness and contrast jittering
-🎓 Research Background
-This project explores the possibility of determining gender using ocular features such as the iris, eyelids, and periocular texture. Inspired by biometrics and human behavioral science, this system pushes the boundaries of gender prediction using minimal visual input.
+```
 
-📦 Dependencies
-torch
-torchvision
-opencv-python
-streamlit
-Pillow
-numpy
-Install via:
+---
 
+## 🖥️ Usage
+
+1. Launch the app and choose **Image** or **Video** input mode.  
+2. Upload an eye image (`.jpg`, `.png`) or a short video (`.mp4`, `.avi`).  
+3. The model will predict and display the gender prediction based on the eye region.  
+
+---
+
+## 🧠 Model Architecture
+
+- **Base Model:** ResNet-18  
+- **Modifications:** Final fully connected layer adapted for binary classification  
+- **Input Size:** 128×128 RGB  
+- **Loss Function:** CrossEntropyLoss  
+- **Optimizer:** Adam  
+
+### 🔁 Data Augmentations:
+- Random Rotations  
+- Horizontal Flips  
+- Brightness & Contrast Jitter  
+
+---
+
+## 🎓 Research Background
+
+This project is inspired by studies on **biometric recognition** and explores the potential of **gender identification using ocular features** such as iris patterns and periocular texture.  
+
+---
+
+## 📦 Dependencies
+
+- `torch`  
+- `torchvision`  
+- `opencv-python`  
+- `streamlit`  
+- `Pillow`  
+- `numpy`  
+
+Install all using:
+
+```bash
 pip install -r requirements.txt
-📄 License
-This project is licensed under the MIT License.
-See the LICENSE file for full terms.
+```
 
-🤝 Contributing
-Contributions are welcome!
-Feel free to:
+---
 
-Fork the project
-Suggest enhancements
-Open issues
-Submit PRs
-🔗 Contact
-👤 Made by Ali Shan
-📧 Email: Ali3819381@gmail.com
-🌐 Portfolio: https://029rrct3v1.app.yourware.so/
+## 📄 License
 
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for full details.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+Feel free to fork the project, submit issues, or open pull requests to enhance features, model accuracy, or UI.
+
+---
+
+## 🔗 Contact
+
+👨‍💻 **Made by:** Ali Shan  
+📧 Email: [Ali3819381@gmail.com](mailto:Ali3819381@gmail.com)  
+🌐 Portfolio: [https://029rrct3v1.app.yourware.so/](https://029rrct3v1.app.yourware.so/)
+```
